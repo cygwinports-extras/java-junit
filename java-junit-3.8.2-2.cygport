@@ -1,0 +1,25 @@
+inherit ant
+
+DESCRIPTION="Java unit test framework"
+HOMEPAGE="http://www.junit.org/"
+SRC_URI="mirror://sourceforge/junit/${ORIG_PN}${PV}.zip
+         mirror://portage/dev-java/junit/files/junit-${PV}-build.xml"
+SRC_DIR="${ORIG_PN}${PV}"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook() {
+	cygjar xf src.jar
+	rm -f *.jar
+	rm -fr javadoc/
+	mv junit-${PV}-build.xml build.xml
+}
+
+ANT_BUILD_TARGETS="dist"
+
+src_install() {
+	cd ${B}/junit${PV}
+	newjar junit.jar junit-${PV}.jar
+	dojavadoc javadoc/
+	java_wrapper junit ${JAVA_DIR}/junit.jar:\$CLASSPATH:. junit.textui.TestRunner
+}
+DOCS="*.html"

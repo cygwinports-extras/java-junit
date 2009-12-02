@@ -1,0 +1,40 @@
+java-junit
+------------------------------------------
+JUnit is a regression testing framework written by Erich Gamma and Kent 
+Beck. It is used by the developer who implements unit tests in Java.
+
+Build requirements:
+  ant-1.7.1-1
+  cygport-0.9.10-1
+  fastjar-0.98-1
+  jamvm-1.5.3-1
+
+Canonical website:
+  http://www.junit.org/
+
+Canonical download:
+  http://downloads.sourceforge.net/junit/
+
+-------------------------------------------
+
+Build instructions:
+  unpack java-junit-3.8.2-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./java-junit-3.8.2-X.cygport all
+
+This will create:
+  /usr/src/java-junit-3.8.2-X-src.tar.bz2
+  /usr/src/java-junit-3.8.2-X.tar.bz2
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 3.8.2-2 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
