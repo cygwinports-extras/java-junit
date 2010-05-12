@@ -20,6 +20,6 @@ src_install() {
 	cd ${B}/junit${PV}
 	newjar junit.jar junit-${PV}.jar
 	dojavadoc javadoc/
-	java_wrapper junit ${JAVA_DIR}/junit.jar:\$CLASSPATH:. junit.textui.TestRunner
+	java_wrapper junit junit.jar junit.textui.TestRunner
 }
 DOCS="*.html"
